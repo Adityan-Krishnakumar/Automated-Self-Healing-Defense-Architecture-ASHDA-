@@ -1,0 +1,22 @@
+<group name="local,ashda,">
+
+  <rule id="100010" level="10">
+    <if_sid>1002</if_sid>
+    <match>Access denied for user</match>
+    <description>MariaDB: Access Denied for user $(srcuser) from IP $(srcip)</description>
+    <group>active_response,firewall_drop,</group>
+  </rule>
+
+  <rule id="100050" level="3">
+    <match>ASHDA-PULSE</match>
+    <description>ASHDA: Pulse Signal Received</description>
+  </rule>
+
+  <rule id="100051" level="12">
+    <if_sid>100050</if_sid>
+    <match>STATUS=CRITICAL</match>
+    <group>self-healing,active_response,service_restart,</group>
+    <description>ASHDA ALERT: Critical Component Failure Detected! Triggering Automated Recovery...</description>
+  </rule>
+
+</group>

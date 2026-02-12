@@ -1,0 +1,9 @@
+<decoder name="ashda-pulse">
+  <prematch>\d+-\d+-\d+ \d+:\d+:\d+ ASHDA-PULSE:</prematch>
+</decoder>
+
+<decoder name="ashda-pulse-fields">
+  <parent>ashda-pulse</parent>
+  <regex>STATUS=(\w+) node=(\S+) component=(\S+)</regex>
+  <order>status, node, component</order>
+</decoder>
