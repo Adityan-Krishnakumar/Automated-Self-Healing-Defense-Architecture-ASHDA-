@@ -1,3 +1,4 @@
+```mermaid
 graph TB
     subgraph "Threat Vector"
         H[Kali Linux: Hydra/Brute Force]
@@ -37,8 +38,3 @@ graph TB
     A --> P
     P -- "SSH/Python: systemctl restart" --> W
     P -- "SSH/Python: systemctl restart" --> D
-
-    %% Styling
-    style H fill:#f66,stroke:#333,stroke-width:2px
-    style R fill:#f96,stroke:#333,stroke-width:4px
-    style P fill:#6f6,stroke:#333,stroke-width:2px
